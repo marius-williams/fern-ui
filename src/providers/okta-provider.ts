@@ -71,7 +71,7 @@ export const createAuthProvider = (oktaAuth: OktaAuth): AuthProvider => ({
 });
 
 // Default instance for normal usage
-export const oktaAuthProvider = createAuthProvider(
+export const oktaProvider = createAuthProvider(
     new OktaAuth({
         issuer: "https://your-okta-domain.okta.com/oauth2/default",
         clientId: "your-client-id",

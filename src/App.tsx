@@ -17,7 +17,7 @@ import {Header} from "./components";
 import {dataProvider} from "./providers/data-provider";
 import {TestRunsList} from "./pages/test-runs";
 
-import { oktaAuthProvider } from './providers/okta-auth-provider';
+import { oktaProvider } from './providers/okta-provider';
 import Authentication from './components/Authentication';
 
 
@@ -32,7 +32,7 @@ function App() {
                         <DevtoolsProvider>
                             <Refine
                                 dataProvider={dataProvider}
-                                authProvider={oktaAuthProvider}
+                                authProvider={oktaProvider}
                                 notificationProvider={useNotificationProvider}
                                 routerProvider={routerBindings}
                                 resources={[
