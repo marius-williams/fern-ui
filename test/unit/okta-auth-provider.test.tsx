@@ -1,5 +1,5 @@
 import { OktaAuth } from "@okta/okta-auth-js";
-import { createAuthProvider } from "../../src/providers/auth-provider";
+import { createAuthProvider } from "../../src/providers/okta-auth-provider";
 
 jest.mock("@okta/okta-auth-js", () => {
     return {
