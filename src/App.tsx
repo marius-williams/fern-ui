@@ -17,6 +17,9 @@ import {Header} from "./components";
 import {dataProvider} from "./providers/data-provider";
 import {TestRunsList} from "./pages/test-runs";
 
+import { oktaAuthProvider } from './providers/okta-auth-provider';
+import Authentication from './components/Authentication';
+
 
 function App() {
 
@@ -29,6 +32,7 @@ function App() {
                         <DevtoolsProvider>
                             <Refine
                                 dataProvider={dataProvider}
+                                authProvider={oktaAuthProvider}
                                 notificationProvider={useNotificationProvider}
                                 routerProvider={routerBindings}
                                 resources={[
@@ -75,6 +79,7 @@ function App() {
                                 <RefineKbar/>
                                 <UnsavedChangesNotifier/>
                                 <DocumentTitleHandler/>
+                                <Authentication />
                             </Refine>
                             <DevtoolsPanel/>
                         </DevtoolsProvider>
