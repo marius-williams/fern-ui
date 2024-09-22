@@ -1,3 +1,4 @@
+import oktaConfig from '../../src/config/okta-config';
 import { OktaAuth } from "@okta/okta-auth-js";
 import { createAuthProvider } from "../../src/providers/okta-provider";
 
@@ -21,9 +22,9 @@ describe("Okta Auth Provider", () => {
 
         // Create the mocked instance of OktaAuth
         oktaAuth = new OktaAuth({
-            issuer: "https://your-okta-domain.okta.com/oauth2/default",
-            clientId: "your-client-id",
-            redirectUri: window.location.origin + "/callback",
+            issuer: oktaConfig.OKTA_ISSUER,
+            clientId: oktaConfig.OKTA_CLIENT_ID,
+            redirectUri: oktaConfig.OKTA_REDIRECT_URI,
         }) as jest.Mocked<OktaAuth>;
 
         // Inject the mocked OktaAuth instance into the authProvider

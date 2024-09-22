@@ -1,3 +1,4 @@
+import oktaConfig from '../../src/config/okta-config';
 import { AuthActionResponse, AuthProvider, CheckResponse, OnErrorResponse } from "@refinedev/core";
 import { OktaAuth } from "@okta/okta-auth-js";
 
@@ -73,8 +74,8 @@ export const createAuthProvider = (oktaAuth: OktaAuth): AuthProvider => ({
 // Default instance for normal usage
 export const oktaProvider = createAuthProvider(
     new OktaAuth({
-        issuer: "https://your-okta-domain.okta.com/oauth2/default",
-        clientId: "your-client-id",
-        redirectUri: window.location.origin + "/callback",
+        issuer: oktaConfig.OKTA_ISSUER,
+        clientId: oktaConfig.OKTA_CLIENT_ID,
+        redirectUri: oktaConfig.OKTA_REDIRECT_URI,
     })
 );
