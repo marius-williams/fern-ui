@@ -21,6 +21,7 @@ const Authentication: React.FC = () => {
     }
 
     return (
+        //TODO: Go to FERN UI homepage instead of the div below
         <div>
             <h2>Welcome, {user?.name}</h2>
             <p>Groups: {user?.groups?.join(', ')}</p>
